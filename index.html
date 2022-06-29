@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="canvas">
+      <div class="player-two-container">
+        <div id="pokeballsP2">
+          <h2>MewTwo <span class="health-count-p2">70/70 HP</span></h2>
+          <div class="hp-container-mew">
+            <h2>HP</h2>
+            <div class="bar p2-health"></div>
+          </div>
+        </div>
+        <img id="ai-image" src="img/mewtwosprite.png" />
+      </div>
+      <div id="pokeballsP1">
+        <h2>Charmander <span class="health-count-p1">70/70 HP</span></h2>
+        <div class="hp-container">
+          <h2>HP</h2>
+          <div class="bar p1-health"></div>
+        </div>
+      </div>
+      <img src="img/charmander.png" id="charmander" />
+      <div class="player-one-container">
+        <h1 class="game-state"></h1>
+        <div class="attack-container">
+          <button class="attack1 btn">Body Slam</button>
+          <button class="attack2 btn">Fire Breath</button>
+          <button class="attack3 btn">Annihilate</button>
+          <button class="attack4 btn">Flamethrower</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

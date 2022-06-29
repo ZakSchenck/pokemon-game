@@ -1,0 +1,179 @@
+body {
+  font-family: "VT323", monospace;
+}
+
+.canvas {
+  width: 600px;
+  height: 600px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 5px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+
+.canvas h2 {
+  font-size: 2.4rem;
+  margin-top: 8%;
+}
+
+.canvas .player-two-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 43%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.canvas .player-two-container #ai-image {
+  width: 43%;
+  height: auto;
+  margin: 3% 3% 0 auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.canvas .player-two-container #pokeballs {
+  width: 50%;
+  height: 25%;
+  margin-top: -8%;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.canvas #charmander {
+  position: absolute;
+  margin-top: -4%;
+  left: 15px;
+  width: 34%;
+  height: auto;
+}
+
+.canvas #pokeballsP2 {
+  position: absolute;
+  margin-top: -20%;
+  left: 12px;
+  width: 49%;
+  height: 11%;
+  padding: 0;
+}
+
+.canvas #pokeballsP2 .hp-container-mew {
+  margin-top: -10%;
+  border-bottom: 7px solid black;
+  border-right: 7px solid black;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.canvas #pokeballsP2 .hp-container-mew .bar {
+  width: 70%;
+  height: 15px;
+  background-color: green;
+  border-radius: 40px;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.canvas #pokeballsP2 .hp-container-mew h2 {
+  margin-top: -2%;
+}
+
+.canvas #pokeballsP1 {
+  position: absolute;
+  margin-top: 3%;
+  right: 12px;
+  width: 49%;
+  height: 11%;
+  padding: 0;
+}
+
+.canvas #pokeballsP1 .hp-container {
+  margin-top: -10%;
+  border-bottom: 7px solid black;
+  border-right: 7px solid black;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.canvas #pokeballsP1 .hp-container .bar {
+  width: 70%;
+  height: 15px;
+  background-color: green;
+  border-radius: 40px;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.canvas #pokeballsP1 .hp-container h2 {
+  margin-top: -2%;
+}
+
+.canvas .player-one-container {
+  height: 30%;
+  width: 95%;
+  border: 5px solid black;
+  margin-top: 23%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.canvas .player-one-container div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-left: 3%;
+  margin-top: 5%;
+  width: 90%;
+}
+
+.canvas .player-one-container div button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "VT323", monospace;
+  font-size: 2.6rem;
+  margin: 4%;
+}
+
+.canvas .player-one-container div button:hover {
+  cursor: pointer;
+}
+
+.health-count-p2 {
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  padding-left: 8px;
+}
+
+.health-count-p1 {
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  padding-left: 3px;
+  margin-left: -4%;
+}
+
+.game-state {
+  display: none;
+  margin: 6%;
+}
+/*# sourceMappingURL=styles.css.map */
