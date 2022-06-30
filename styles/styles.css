@@ -159,6 +159,28 @@ body {
   cursor: pointer;
 }
 
+.restart-game {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+  font-size: 20px;
+  font-family: "VT323", monospace;
+  padding: 8px 12px;
+  background-color: #3d3dff;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.restart-game:hover {
+  cursor: pointer;
+  background-color: #5252ff;
+}
+
 .health-count-p2 {
   border-bottom: 4px solid black;
   border-left: 4px solid black;

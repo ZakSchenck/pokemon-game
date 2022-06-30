@@ -8,6 +8,7 @@ const playerOneHealthBar = document.querySelector(".p1-health");
 const playerOneHealthCount = document.querySelector(".health-count-p1");
 const gameStateText = document.querySelector(".game-state");
 const attackContainer = document.querySelector(".attack-container");
+const restartBtn = document.querySelector(".restart-game");
 let playerOneHealth = 70;
 let playerTwoHealth = 70;
 const playerTwoAttacks = ["Psychic", "Confusion", "Facade", "Psycho Blast"];
@@ -30,6 +31,7 @@ const charmanderWins = () => {
   gameStateText.style.display = "block";
   attackContainer.style.display = "none";
   playerTwoHealthCount.innerText = "0 / 70";
+  restartBtn.style.display = "block"
 };
 // Checks if Mewtwo wins
 const mewtwoWins = () => {
@@ -38,6 +40,7 @@ const mewtwoWins = () => {
   gameStateText.style.display = "block";
   attackContainer.style.display = "none";
   playerOneHealthCount.innerText = "0 / 70";
+  restartBtn.style.display = "block"
 };
 
 // Player One Attacking logic function
@@ -117,10 +120,30 @@ const intervalFunction = () => {
   }, 2502);
   setTimeout(() => {
     clearInterval(interval);
-    gameStateText.style.display = "none";
-    attackContainer.style.display = "grid";
+    if (playerOneHealth >= 0) {
+      gameStateText.style.display = "none";
+      attackContainer.style.display = "grid";
+    } 
   }, 5004);
 };
+
+// Restart game logic
+const restartGame = () => {
+  playerTwoHealthBar.style.width = "70%";
+  gameStateText.style.display = "none";
+  attackContainer.style.display = "grid";
+  playerTwoHealthCount.innerText = "70 / 70";
+  playerOneHealthBar.style.width = "70%";
+  playerOneHealthBar.style.backgroundColor = "green";
+  playerTwoHealthBar.style.backgroundColor = "green";
+  playerOneHealthCount.innerText = "70 / 70";
+  restartBtn.style.display = "none";
+  playerOneHealth = 70;
+  playerTwoHealth = 70;
+}
+
+// Restart button event listener
+restartBtn.addEventListener('click', () => restartGame())
 
 // Player one attack button events
 attackOne.addEventListener("click", () => playerOneAttack(12, 18, "Body Slam"));
