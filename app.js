@@ -24,23 +24,14 @@ const healthColor = (playerHealth, playerBar) => {
   }
 };
 
-// Checks if Charmander wins
-const charmanderWins = () => {
-  gameStateText.innerText = "Charmander wins! Congratulations!";
-  playerTwoHealthBar.style.width = "0%";
+// Checks if Charmander or Mewtwo win
+const checkWinner = (name, playerBar, playerCount) => {
+  gameStateText.innerText = `${name} wins! Press restart to play again!`;
+  playerBar.style.width = "0%";
   gameStateText.style.display = "block";
   attackContainer.style.display = "none";
-  playerTwoHealthCount.innerText = "0 / 70";
-  restartBtn.style.display = "block"
-};
-// Checks if Mewtwo wins
-const mewtwoWins = () => {
-  gameStateText.innerText = "Mewtwo wins! Wow you suck!";
-  playerOneHealthBar.style.width = "0%";
-  gameStateText.style.display = "block";
-  attackContainer.style.display = "none";
-  playerOneHealthCount.innerText = "0 / 70";
-  restartBtn.style.display = "block"
+  playerCount.innerText = "0 / 70";
+  restartBtn.style.display = "block";
 };
 
 // Player One Attacking logic function
@@ -51,9 +42,9 @@ const playerOneAttack = (subtract, missCount, attackName) => {
     // Subtract health
     playerTwoHealth -= subtract;
     if (playerTwoHealth <= 0) {
-      charmanderWins();
+      checkWinner("Charmander", playerTwoHealthBar, playerTwoHealthCount);
     } else if (playerOneHealth <= 0) {
-      mewtwoWins();
+      checkWinner("Mewtwo", playerOneHealthBar, playerOneHealthCount);
     } else {
       intervalFunction();
       playerTwoHealthBar.style.width = `${playerTwoHealth}%`;
@@ -91,7 +82,7 @@ const playerTwoAttack = () => {
   if (randomNumber !== 1) {
     playerOneHealth -= subtractHealth;
     if (playerOneHealth <= 0) {
-      mewtwoWins();
+      checkWinner("Mewtwo", playerOneHealthBar, playerOneHealthCount);
     } else {
       playerOneHealthBar.style.width = `${playerOneHealth}%`;
       playerOneHealthBar.style.transition = "1.4s";
@@ -123,7 +114,7 @@ const intervalFunction = () => {
     if (playerOneHealth >= 0) {
       gameStateText.style.display = "none";
       attackContainer.style.display = "grid";
-    } 
+    }
   }, 5004);
 };
 
@@ -140,10 +131,10 @@ const restartGame = () => {
   restartBtn.style.display = "none";
   playerOneHealth = 70;
   playerTwoHealth = 70;
-}
+};
 
 // Restart button event listener
-restartBtn.addEventListener('click', () => restartGame())
+restartBtn.addEventListener("click", () => restartGame());
 
 // Player one attack button events
 attackOne.addEventListener("click", () => playerOneAttack(12, 18, "Body Slam"));
